@@ -22,7 +22,8 @@ class ListAdapter(private val repositories: List<Repository>,
     override fun onBindViewHolder(p0: ViewHolder, p1: Int) {
         p0.rank.text = context.getString(R.string.rank, p1+1)
         repositories[p1].let {
-            p0.repoName.text = it.full_name
+            p0.repoName.text = it.name
+            p0.itemView.tag = it.html_url
             p0.starsCount.text = context.getString(R.string.stars, it.stargazers_count)
             p0.forkCount.text = context.getString(R.string.forks, it.forks_count)
             it.owner?.let { owner ->

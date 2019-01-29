@@ -1,7 +1,10 @@
 package com.example.github.presentation
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.github.R
 import com.example.github.domain.Repository
@@ -47,5 +50,15 @@ class MainActivity : AppCompatActivity(), ListViewInterface {
 
     override fun stopRefresh() {
         srlRepositoriesRefresh.isRefreshing = false
+    }
+
+    fun openRepository(v: View) {
+        val url = v.tag as String
+        val uris = Uri.parse(url)
+        val intents = Intent(Intent.ACTION_VIEW, uris)
+        val b = Bundle()
+        b.putBoolean("new_window", true)
+        intents.putExtras(b)
+        startActivity(intents)
     }
 }

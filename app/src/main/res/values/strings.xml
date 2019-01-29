@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Github Kotlin Repos</string>
+    <string name="app_name">GitHub Kotlin Repositories</string>
     <string name="rank">#%d</string>
     <string name="by">by %s</string>
     <string name="stars">%d stars</string>

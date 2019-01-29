@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".presentation.MainActivity">
+    <androidx.cardview.widget.CardView
+            app:cardBackgroundColor="#D7CCC8"
+            app:contentPadding="8dp"
+            android:layout_margin="8dp"
+            app:cardCornerRadius="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <ImageView
+                    android:id="@+id/ivOwner"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                    android:id="@+id/tvRank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="#1"
+                    android:textSize="48sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:textStyle="italic"/>
+
+            <LinearLayout
+                    android:id="@+id/nameLayout"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16sp"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivOwner"
+                    app:layout_constraintEnd_toStartOf="@id/tvRank"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/tvRepoName"
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="RepoName"
+                        android:textSize="16sp"
+                        android:maxLines="2"
+                        android:breakStrategy="simple"/>
+                <TextView
+                        android:id="@+id/tvOwner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Owner"
+                        android:textSize="20sp"
+                        android:textStyle="italic"/>
+                <LinearLayout
+                        android:layout_gravity="end"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    <TextView
+                            android:id="@+id/tvStars"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="123 Stars"/>
+                    <TextView
+                            android:id="@+id/tvForks"
+                            android:layout_marginStart="16dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="3 Forks"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -6,7 +6,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import retrofit2.HttpException
 
-class MainInteractor(private val presenter: ListPresenterInterface,
+class ListInteractor(private val presenter: ListPresenterInterface,
                      private val service: GithubService): ListInteractorInterface {
 
     override fun onCreateList() {

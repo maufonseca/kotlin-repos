@@ -8,7 +8,7 @@
         android:onClick="openRepository"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".presentation.MainActivity">
+        tools:context=".presentation.ListActivity">
     <androidx.cardview.widget.CardView
             app:cardBackgroundColor="#D7CCC8"
             app:contentPadding="8dp"

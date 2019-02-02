@@ -11,7 +11,7 @@ import com.example.github.domain.Repository
 import com.example.github.infrastructure.RetrofitFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), ListViewInterface {
+class ListActivity : AppCompatActivity(), ListViewInterface {
 
     private lateinit var interactor: ListInteractorInterface
     private lateinit var presenter: ListPresenterInterface
@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity(), ListViewInterface {
     }
 
     private fun setupScene() {
-        presenter = MainPresenter(this)
-        interactor = MainInteractor(presenter, RetrofitFactory.makeGithubService())
+        presenter = ListPresenter(this)
+        interactor = ListInteractor(presenter, RetrofitFactory.makeGithubService())
     }
 
     private fun setupList() {

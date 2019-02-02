@@ -21,7 +21,7 @@ Ao executar o teste instrumentado é necessário um dispositivo real ou virtual 
 1. [**Clean Architecture**](https://link.medium.com/ZIkR8dmzOT)
 1. [**Kotlin 1.3**](https://kotlinlang.org/)
 1. Chamada de serviço assíncrona para recuperar o vetor da internet utilizando [**Retrofit 2**](https://square.github.io/retrofit/) e [**RxAndroid 2**](https://github.com/ReactiveX/RxAndroid)
-3. Cache de imagens com [Glide](https://github.com/bumptech/glide)
+3. Cache de imagens com [**Glide**](https://github.com/bumptech/glide)
 1. Scroll infinito
 2. Redirecionamento para o repositório ao clicar no item da lista
 1. Swipe to Refresh

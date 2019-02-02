@@ -1,6 +1,10 @@
 package com.example.github.domain
 
+import com.google.gson.annotations.SerializedName
+
 class Owner {
     var login: String? = null
-    var avatar_url: String? = null
+
+    @SerializedName("avatar_url")
+    var avatarUrl: String? = null
 }

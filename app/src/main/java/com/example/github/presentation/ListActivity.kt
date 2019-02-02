@@ -15,6 +15,7 @@ class ListActivity : AppCompatActivity(), ListViewInterface {
 
     private lateinit var interactor: ListInteractorInterface
     private lateinit var presenter: ListPresenterInterface
+    private lateinit var layoutManager: LinearLayoutManager
     private lateinit var listAdapter: ListAdapter
     private val repositories: MutableList<Repository> = mutableListOf()
 
@@ -31,10 +32,22 @@ class ListActivity : AppCompatActivity(), ListViewInterface {
     }
 
     private fun setupList() {
-        srlRepositoriesRefresh.setOnRefreshListener { interactor.onCreateList() }
-        rvRepositories.layoutManager = LinearLayoutManager(this)
+        srlRepositoriesRefresh.setOnRefreshListener {
+            listAdapter.addLoading()
+            interactor.onRefresh()
+        }
+
+        layoutManager = LinearLayoutManager(this)
         listAdapter = ListAdapter(repositories, this)
+
+        rvRepositories.layoutManager = layoutManager
         rvRepositories.adapter = listAdapter
+        rvRepositories.addOnScrollListener(
+            EndlessScrollListener(6,
+                layoutManager,
+                interactor::onScrolledBeyondVisibleThreshold
+            ))
+
         interactor.onCreateList()
     }
 
@@ -60,5 +73,14 @@ class ListActivity : AppCompatActivity(), ListViewInterface {
         b.putBoolean("new_window", true)
         intents.putExtras(b)
         startActivity(intents)
+    }
+
+    override fun endInfiniteScroll() {
+        listAdapter.removeLoading()
+    }
+
+    override fun onDestroy() {
+        interactor.onDestroy()
+        super.onDestroy()
     }
 }

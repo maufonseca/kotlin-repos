@@ -4,6 +4,7 @@ import com.example.github.domain.SearchResult
 
 interface ListPresenterInterface {
 
-    fun onResultReceived(result: SearchResult)
+    fun onResultReceived(result: SearchResult, page: Int)
+    fun onItemsCompleted()
 
 }

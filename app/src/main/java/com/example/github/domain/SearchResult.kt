@@ -1,7 +1,13 @@
 package com.example.github.domain
 
+import com.google.gson.annotations.SerializedName
+
 class SearchResult {
-    var total_count = 0
-    var incomplete_results = false
+    @SerializedName("total_count")
+    var totalCount = 0
+
+    @SerializedName("incomplete_results")
+    var incompleteResults = false
+
     var items: List<Repository>? = null
 }
